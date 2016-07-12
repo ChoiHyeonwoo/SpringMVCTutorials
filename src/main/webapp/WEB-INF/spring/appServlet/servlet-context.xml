@@ -16,7 +16,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- ViewResolver class에서 View 파일 매핑 -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />	<!-- 10.  컨트롤러에서 리턴된 뷰 앞에 붙이는,,,! -->
 		<beans:property name="suffix" value=".jsp" />  <!-- 11. 컨트롤러에서 리턴된 뷰 뒤에 붙이는,,,! -->
 	</beans:bean>
