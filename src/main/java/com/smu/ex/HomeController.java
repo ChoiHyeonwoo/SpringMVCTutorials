@@ -36,24 +36,5 @@ public class HomeController {
 		
 		return "home"; // 9. View의 이름
 	}
-	@RequestMapping("/border/view")
-	public String views(){
-		
-		
-		return "/border/View";
-	}
-	@RequestMapping("/border/writer")
-	public String writer(Model model){
-		
-		model.addAttribute("id", 30);
-		return "/border/Writer";
-	}
-	@RequestMapping("/border/reply")
-	public ModelAndView reply(){
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("id", 30);
-		mv.setViewName("/border/Reply");
-		
-		return mv;
-	}
+
 }
