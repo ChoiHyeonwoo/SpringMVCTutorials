@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Handles requests for the application home page.
@@ -37,7 +38,7 @@ public class HomeController {
 		
 		return "home"; // 9. View의 이름
 	}
-	@RequestMapping("memberView")
+	@RequestMapping("/memberView")
 	public String memberView(Model model, HttpServletRequest request){
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -46,6 +47,16 @@ public class HomeController {
 		model.addAttribute("pw", pw);
 		
 		return "MemberView";
+	}
+	@RequestMapping("/memberConfirm")
+	// RequestParam Anotation 사용시 파라미터없으면 400 에러
+	public String confirm(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model){
+		
+				
+		model.addAttribute("id", id);
+		model.addAttribute("pw", pw);
+		
+		return "MemberConfirm";
 	}
 
 }
