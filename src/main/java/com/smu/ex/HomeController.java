@@ -59,4 +59,25 @@ public class HomeController {
 		return "MemberConfirm";
 	}
 
+//	@RequestMapping("/formOK")
+//	public String formOK(@RequestParam("name") String name,@RequestParam("id") String id,
+//			@RequestParam("pw") String pw, @RequestParam("email") String email,Model model){
+//		 Member member = new Member();
+//		 
+//		 member.setName(name);
+//		 member.setId(id);
+//		 member.setPw(pw);
+//		 member.setEmail(email);
+//		 
+//		 model.addAttribute("member", member);
+//		 		 
+//		return "FormOK";
+//	}
+// 위에거를 밑에꺼 처럼 줄일 수 있다.	
+	@RequestMapping("/formOK")
+	public String formOK(Member member){
+		 		 
+		return "FormOK";
+	}
+
 }
